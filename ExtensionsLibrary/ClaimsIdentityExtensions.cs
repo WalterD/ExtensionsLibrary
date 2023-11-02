@@ -47,14 +47,14 @@ namespace ExtensionsLibrary
                 return email;
             }
 
-            // this may be Bisk specific
+            // this may be company specific
             var principalName = claimsPrincipal.UserPrincipalName();
             if (!string.IsNullOrWhiteSpace(principalName) && principalName.Contains("@"))
             {
                 return principalName;
             }
 
-            // this may be Bisk specific
+            // this may be company specific
             var name = claimsPrincipal.FindFirst(c => c.Type.EndsWith("/name"))?.Value;
             if (!string.IsNullOrWhiteSpace(name) && name.Contains("@"))
             {
